@@ -17,8 +17,7 @@ This will install pre-commit for you. Then run `pre-commit install` to set up th
 Pre-commit will run each time you attempt to commit staged changes. You can run the pre-commit checks at any time
 using `pre-commit run`.
 
-Running Tests
--------------
+# Running Tests
 
 To run the test suite, make sure you've installed the packages listed in `requirements.txt`. Then run `pytest --cov=application_name`
 
