@@ -45,6 +45,18 @@ python run.py
 
 Use the status check endpoint located at `localhost:5000/status` in order to check the status of the database connection.
 
+## Production Running
+
+Use `gunicorn` to run the application behind a production-grade WSGI server.
+The Flask development server is not suitable for production use.
+
+```
+gunicorn -w 4 -b 127.0.0.1:5000 application_name.app:app
+```
+This command produces 4 workers and binds to port 5000.
+
+Use the status checkpoint, `localhost:5000/status` to verify the service is healthy.
+
 # Adding Resources: Models, Views, Routes, and Blueprints
 
 All models should extend `application_name.database.BaseModel`. Models, views, and Blueprints should all be added to the respective resource module in the `application_name/` directory.
