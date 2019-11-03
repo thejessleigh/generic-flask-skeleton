@@ -45,7 +45,7 @@ python run.py
 
 Use the status check endpoint located at `localhost:5000/status` in order to check the status of the database connection.
 
-## Production Running
+## Production Deployment 
 
 Use `gunicorn` to run the application behind a production-grade WSGI server.
 The Flask development server is not suitable for production use.
