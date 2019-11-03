@@ -6,7 +6,7 @@ from git import Repo
 from sqlalchemy.exc import OperationalError
 
 from application_name.resource_name.views import resource_blueprint
-from application_name.database import Base
+from application_name.database import db_session, Base
 from config.config import Config
 
 
