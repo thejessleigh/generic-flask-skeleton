@@ -4,6 +4,9 @@ This Flask skeleton is set up in the particular way that my team and I like so t
 
 This skeleton includes some utilites for both GitHub and GitLab. Repository specific files should be removed as necessary.
 
+[Poetry](https://poetry.eustace.io) is used to manage dependencies and the virtual environment. 
+Please note that `poetry shell` [does not work correctly](https://github.com/sdispater/poetry/issues/571).
+
 # Pre-Commit
 
 This project uses pre-commit hooks to ensure consistent code style throughout the repo. We use
@@ -18,7 +21,7 @@ using `pre-commit run`.
 
 # Running Tests
 
-To run the test suite, make sure you've installed the packages listed in `requirements.txt`. Then run `pytest --cov=application_name`
+To run the test suite, make sure you've run `poetry install --dev` and activated your virtual environment. Then run `pytest --cov=application_name`
 
 Pull requests that cause the repository's overall test coverage to drop below X% or cause a decrease in coverage of %Y
 or more will be rejected. Please make sure to update tests in accordance with your changes.
@@ -33,7 +36,7 @@ To facilitate local development we use `python-dotenv` to load environment varia
 cp .env.sample .env`
 ```
 
-Adjust the SQLALCHEMY_DATABASE_URI to point to an actual running postgres instance.
+Adjust the SQLALCHEMY\_DATABASE\_URI to point to an actual running postgres instance.
 
 # Running the Application
 
