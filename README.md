@@ -6,6 +6,7 @@ This skeleton includes some utilites for both GitHub and GitLab. Repository spec
 
 [Poetry](https://poetry.eustace.io) is used to manage dependencies and the virtual environment. 
 Please note that `poetry shell` [does not work correctly](https://github.com/sdispater/poetry/issues/571).
+Additionally, note that when installing during deployments, dependencies should be installed with `poetry install --no-dev`.
 
 # Pre-Commit
 
@@ -21,7 +22,7 @@ using `pre-commit run`.
 
 # Running Tests
 
-To run the test suite, make sure you've run `poetry install --dev` and activated your virtual environment. Then run `pytest --cov=application_name`
+To run the test suite, make sure you've run `poetry install` and activated your virtual environment. Then run `pytest --cov=application_name`
 
 Pull requests that cause the repository's overall test coverage to drop below X% or cause a decrease in coverage of %Y
 or more will be rejected. Please make sure to update tests in accordance with your changes.
