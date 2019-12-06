@@ -4,7 +4,7 @@ This Flask skeleton is set up in the particular way that my team and I like so t
 
 This skeleton includes some utilites for both GitHub and GitLab. Repository specific files should be removed as necessary.
 
-[Poetry](https://poetry.eustace.io) is used to manage dependencies and the virtual environment. 
+[Poetry](https://poetry.eustace.io) is used to manage dependencies and the virtual environment.
 Please note that `poetry shell` [does not work correctly](https://github.com/sdispater/poetry/issues/571).
 Additionally, note that when installing during deployments, dependencies should be installed with `poetry install --no-dev`.
 
@@ -37,7 +37,7 @@ To facilitate local development we use `python-dotenv` to load environment varia
 cp .env.sample .env`
 ```
 
-Adjust the SQLALCHEMY\_DATABASE\_URI to point to an actual running postgres instance.
+Adjust the SQLALCHEMY_DATABASE_URI to point to an actual running postgres instance.
 
 # Running the Application
 
@@ -48,6 +48,19 @@ python run.py
 ```
 
 Use the status check endpoint located at `localhost:5000/status` in order to check the status of the database connection.
+
+## Production Deployment
+
+Use `gunicorn` to run the application behind a production-grade WSGI server.
+The Flask development server is not suitable for production use.
+
+```
+gunicorn -w 4 -b 127.0.0.1:5000 application_name.app:app
+```
+
+This command produces 4 workers and binds to port 5000.
+
+Use the status checkpoint, `localhost:5000/status` to verify the service is healthy.
 
 # Adding Resources: Models, Views, Routes, and Blueprints
 

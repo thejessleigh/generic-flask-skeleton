@@ -138,6 +138,17 @@ version = "3.0.5"
 gitdb2 = ">=2.0.0"
 
 [[package]]
+category = "main"
+description = "WSGI HTTP Server for UNIX"
+name = "gunicorn"
+optional = false
+python-versions = ">=3.4"
+version = "20.0.4"
+
+[package.dependencies]
+setuptools = ">=3.0"
+
+[[package]]
 category = "dev"
 description = "File identification library for Python"
 name = "identify"
@@ -433,7 +444,7 @@ version = "0.6.0"
 more-itertools = "*"
 
 [metadata]
-content-hash = "895514edf48d76a41e31cbb09b3e6624081fb39325e6f0f3af45f70eddb01608"
+content-hash = "0cc6a5b593630375f62524d173461f475188791f55a26b66d74b12cd6141dd1a"
 python-versions = "^3.7"
 
 [metadata.hashes]
@@ -450,6 +461,7 @@ flask-migrate = ["6fb038be63d4c60727d5dfa5f581a6189af5b4e2925bc378697b4f0a40cfb4
 flask-sqlalchemy = ["0078d8663330dc05a74bc72b3b6ddc441b9a744e2f56fe60af1a5bfc81334327", "6974785d913666587949f7c2946f7001e4fa2cb2d19f4e69ead02e4b8f50b33d"]
 gitdb2 = ["1b6df1433567a51a4a9c1a5a0de977aa351a405cc56d7d35f3388bad1f630350", "96bbb507d765a7f51eb802554a9cfe194a174582f772e0d89f4e87288c288b7b"]
 gitpython = ["9c2398ffc3dcb3c40b27324b316f08a4f93ad646d5a6328cafbb871aa79f5e42", "c155c6a2653593ccb300462f6ef533583a913e17857cfef8fc617c246b6dc245"]
+gunicorn = ["1904bb2b8a43658807108d59c3f3d56c2b6121a701161de0ddf9ad140073c626", "cd4a810dd51bf497552cf3f863b575dabd73d6ad6a91075b65936b151cbf4f9c"]
 identify = ["7782115794ec28b011702815d9f5e532244560cd2bf0789c4f09381d43befd90", "9e7521e9abeaede4d2d1092a106e418c65ddf6b3182b43930bcb3c8cfb974488"]
 importlib-metadata = ["3a8b2dfd0a2c6a3636e7c016a7e54ae04b997d30e69d5eacdca7a6c2221a1402", "41e688146d000891f32b1669e8573c57e39e5060e7f5f647aa617cd9a9568278"]
 itsdangerous = ["321b033d07f2a4136d3ec762eac9f16a10ccd60f53c0c91af90217ace7ba1f19", "b12271b2047cb23eeb98c8b5622e2e5c5e9abd9784a153e9d8ef9cb4dd09d749"]
