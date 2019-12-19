@@ -4,6 +4,10 @@ This Flask skeleton is set up in the particular way that my team and I like so t
 
 This skeleton includes some utilites for both GitHub and GitLab. Repository specific files should be removed as necessary.
 
+[Poetry](https://poetry.eustace.io) is used to manage dependencies and the virtual environment.
+Please note that `poetry shell` [does not work correctly](https://github.com/sdispater/poetry/issues/571).
+Additionally, note that when installing during deployments, dependencies should be installed with `poetry install --no-dev`.
+
 # Pre-Commit
 
 This project uses pre-commit hooks to ensure consistent code style throughout the repo. We use
@@ -18,7 +22,7 @@ using `pre-commit run`.
 
 # Running Tests
 
-To run the test suite, make sure you've installed the packages listed in `requirements.txt`. Then run `pytest --cov=application_name`
+To run the test suite, make sure you've run `poetry install` and activated your virtual environment. Then run `pytest --cov=application_name`
 
 Pull requests that cause the repository's overall test coverage to drop below X% or cause a decrease in coverage of %Y
 or more will be rejected. Please make sure to update tests in accordance with your changes.
@@ -45,7 +49,7 @@ python run.py
 
 Use the status check endpoint located at `localhost:5000/status` in order to check the status of the database connection.
 
-## Production Deployment 
+## Production Deployment
 
 Use `gunicorn` to run the application behind a production-grade WSGI server.
 The Flask development server is not suitable for production use.
@@ -53,6 +57,7 @@ The Flask development server is not suitable for production use.
 ```
 gunicorn -w 4 -b 127.0.0.1:5000 application_name.app:app
 ```
+
 This command produces 4 workers and binds to port 5000.
 
 Use the status checkpoint, `localhost:5000/status` to verify the service is healthy.
