@@ -1,0 +1,10 @@
+.git
+.cache
+.idea
+*.swp
+*.swn
+*.swo
+*.md
+Dockerfile
+tests
+venv
